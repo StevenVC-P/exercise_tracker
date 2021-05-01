@@ -79,7 +79,7 @@ app.get("/api/workouts/range", (req, res) => {
         totalDuration: {$sum: "$exercises.duration"}
       }
     }
-  ])
+  ]).limit(7)
   .then(dbWorkout => {
     res.json(dbWorkout);
   }).catch(err => {
