@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 });
 
 // routes
-// html
+// html routes
 app.get('/', (req,res) =>{
   res.sendFile(path.join(__dirname,"./public/index.html"));
 });
@@ -31,6 +31,7 @@ app.get('/stats', (req,res) =>{
   res.sendFile(path.join(__dirname,"./public/stats.html"));
 });
 
+// api routes
 // fetch for getLastWork
 app.get("/api/workouts/", (req, res) => {
   db.Workout.aggregate([
@@ -40,8 +41,7 @@ app.get("/api/workouts/", (req, res) => {
       }
     }
   ])
-  .then(workoutInRange => {
-    console.log(dbWorkout);
+  .then(dbWorkout => {
     res.json(dbWorkout);
   }).catch(err => {
     res.json(err);
@@ -61,7 +61,7 @@ app.post("/api/workouts/", ({body}, res) => {
 //fetch for addExercise
 app.put("/api/workouts/:id", (req, res) => {
   id = req.params.id
-  db.Workout.findOneAndUpdate({ "_id": id}, { $push: { exercises: req.body } } , { new: true})
+  db.Workout.findOneAndUpdate({ "_id": id}, { $set: { exercises: req.body } })
   .then(result => {
     res.json(result);
   })
