@@ -11,7 +11,7 @@ The Fitness tracker allows the user to create new workouts and add finished exer
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [License](#License)
-* [Contributing](#Contributing)
+* [Pictures](#Pictures)
 * [Tests](#Tests)
 * [Questions](#Questions)
 
@@ -25,11 +25,8 @@ From the opening the page, the user can either contiune thier current workout or
 Mozzila Public License 2.0
 Please review [https://opensource.org/licenses/MPL-2.0](https://opensource.org/licenses/MPL-2.0) to understand the license.
 
-## Contributing
-
-
-## Tests
-
+## Pictures
+![image](https://user-images.githubusercontent.com/77998885/118190209-6ad4c880-b408-11eb-9ab1-2cc3c4e548b0.png)
 
 ## Questions
 Come checkout my Github!
